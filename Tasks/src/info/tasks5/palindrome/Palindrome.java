@@ -9,28 +9,34 @@ public class Palindrome {
 	private static Logger logger = Logger.getLogger(Palindrome.class.getName());
 
 	public static void main(String[] args) {
+		int palindrome = getPalindroms();
+		logger.info("The max palindrome is " + palindrome);
+	}
+
+	public static int getPalindroms() {
+
 		List<Integer> palindrome = new ArrayList<>();
-		for (int i = 9999; i > 999; i--) {
-			for (int j = 9999; j > 999; j--) {
-				int mult = i * j;
-				if (isPalindrome(mult)) {
-					palindrome.add(mult);
+		{
+			for (int i = 9999; i > 999; i--) {
+				for (int j = 9999; j > 999; j--) {
+					int mult = i * j;
+					if (isPalindrome(mult)) {
+						palindrome.add(mult);
+					}
 				}
 			}
 		}
-		logger.info("The max palindrome is " + Collections.max(palindrome));
-		logger.info("The min palindrome is " + Collections.min(palindrome));
-
+		return Collections.max(palindrome);
 	}
 
-	private static boolean isPalindrome(int mult) {
+	public static boolean isPalindrome(int mult) {
 		String str2 = Integer.toString(mult);
 		String reverse = new StringBuffer(str2).reverse().toString();
 		if (str2.equals(reverse)) {
 			return true;
-		} else
+		} else {
 			return false;
-
+		}
 
 	}
 

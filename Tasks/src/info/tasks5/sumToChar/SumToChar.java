@@ -7,6 +7,10 @@ public class SumToChar {
 	private static Logger logger = Logger.getLogger(SumToChar.class.getName());
 
 	public static void main(String[] args) {
+		logger.info("" + sumCharValue());
+		}
+		
+	public static int sumCharValue() {
 		int sum = 0;
 
 		String s = Integer.toString(12345);
@@ -15,8 +19,6 @@ public class SumToChar {
 		for (int i = 0; i < str.length; i++) {
 			int b = Character.getNumericValue(str[i]);
 			sum += b;
-		}
-		logger.info("" + sum);
+	}return sum;
 	}
-
 }
