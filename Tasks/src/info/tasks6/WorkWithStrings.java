@@ -38,11 +38,13 @@ public class WorkWithStrings {
 	}
 
 	public static List<String> space() {
-		String s = " ";
+		List<Integer> list = mult();
+		String s = "";
 		List<String> space = new ArrayList<>();
-		space.add(s);
-		space.add(s.concat(s));
-		space.add(s.concat(s).concat(s));
+		for (int i = 0; i < list.size(); i++) {
+			s +=" ";
+			space.add(s);
+		}
 		return space;
 	}
 }
