@@ -9,13 +9,23 @@ public class WorkWithStringsTest {
 	@Test
 	public void testMult() {
 		assertNotNull(WorkWithStrings.mult());
+		
 	}
 
 	@Test
-	public void testSpace() {
-		assertNotNull(WorkWithStrings.space());
-		
+	public void testSpacesToString() {
+		assertNotNull(WorkWithStrings.spacesToString());
 
+	}
+
+	@Test
+	public void Underline() {
+		assertNotNull(WorkWithStrings.underline());
+	}
+
+	@Test
+	public void testStringLeght() {
+		assertNotNull(WorkWithStrings.stringLeght());
 	}
 
 }
