@@ -4,28 +4,31 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import info.tasks6.WorkWithStrings;
+
 public class WorkWithStringsTest {
+	
 
 	@Test
-	public void testMult() {
-		assertNotNull(WorkWithStrings.mult());
-		
+	public void testGetMultiStringResult() {
+//		assertNotNull();
+		assertEquals(expected, actual);
 	}
-
+	
 	@Test
-	public void testSpacesToString() {
-		assertNotNull(WorkWithStrings.spacesToString());
-
+	public void testCicleMultipl() {
+//		assertNotNull();
 	}
-
+	
 	@Test
-	public void Underline() {
-		assertNotNull(WorkWithStrings.underline());
+	public void testUnderLineAmt() {
+//		assertNotNull();
 	}
-
+	
+	
 	@Test
-	public void testStringLeght() {
-		assertNotNull(WorkWithStrings.stringLeght());
+	public void testSpacesAmt() {
+//		assertNotNull();
 	}
-
+	
 }
