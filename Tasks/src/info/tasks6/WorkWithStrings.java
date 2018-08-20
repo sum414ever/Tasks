@@ -7,7 +7,7 @@ public class WorkWithStrings {
 	private static Logger log = Logger.getLogger(WorkWithStrings.class.getName());
 
 	public static void main(String[] args) {
-		log.info("\n" + getMultiStringResult(78123, 9667));
+		log.info("\n" + getMultiStringResult(12345, 2));
 	}
 
 	private static String getMultiStringResult(int num1, int num2) {
@@ -16,16 +16,6 @@ public class WorkWithStrings {
 
 		stringResult += spacesAmt(totalStringLong.length() - String.valueOf(num1).length()) + num1 + "\n";
 		stringResult += spacesAmt(totalStringLong.length() - String.valueOf(num2).length()) + num2 + "\n";
-
-		int numUnderLine = 0;
-		if (String.valueOf(num1).length() > String.valueOf(num2).length()) {
-			numUnderLine = String.valueOf(num1).length();
-		} else {
-			numUnderLine = String.valueOf(num2).length();
-		}
-
-		stringResult += spacesAmt(totalStringLong.length() - underLineAmt(numUnderLine).length())
-				+ underLineAmt(numUnderLine) + "\n";
 
 		stringResult += cicleMultipl(num1, num2, totalStringLong);
 
@@ -39,14 +29,25 @@ public class WorkWithStrings {
 	private static String cicleMultipl(int num1, int num2, String totalStringLong) {
 
 		char[] num2char = new StringBuffer(Integer.toString(num2)).reverse().toString().toCharArray();
+		
+		int numUnderLine = 0;
+		if (String.valueOf(num1).length() > String.valueOf(num2).length()) {
+			numUnderLine = String.valueOf(num1).length();
+		} else {
+			numUnderLine = String.valueOf(num2).length();
+		}
 
-		String cicleResult = "";
-		String mult = "";
-
+		String cicleResult = spacesAmt(totalStringLong.length() - underLineAmt(numUnderLine).length())
+				+ underLineAmt(numUnderLine) + "\n";;
+		
+		if(num2char.length != 1) {
+			String mult = "";
 		for (int i = 0; i < num2char.length; i++) {
 			mult = Integer.toString(num1 * Character.getNumericValue(num2char[i]));
 			cicleResult += spacesAmt(totalStringLong.length() - mult.length() - i) + mult + "\n";
 		}
+		}else cicleResult = "";
+		
 		return cicleResult;
 
 	}
